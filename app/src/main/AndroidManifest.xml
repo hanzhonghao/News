@@ -38,9 +38,13 @@
             android:name=".ui.activity.ZhihuWebActivity"
             android:theme="@style/StatueTransActivityTheme">
         </activity>
-        <activity android:name=".ui.activity.PictureActivity">
+        <activity
+            android:name=".ui.activity.PictureActivity"
+            android:theme="@style/MainTheme">
         </activity>
-        <activity android:name=".ui.activity.GankActivity">
+        <activity
+            android:name=".ui.activity.GankActivity"
+            android:theme="@style/MainTheme">
         </activity>
     </application>
 
