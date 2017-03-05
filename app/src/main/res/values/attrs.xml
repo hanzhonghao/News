@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="SplashView">
+        <attr name="splashIcon" format="reference"/>
+        <attr name="iconColor" format="color"/>
+        <attr name="holeFillColor" format="color"/>
+        <attr name="duration" format="integer"/>
+        <attr name="removeFromParentOnEnd" format="boolean"/>
+    </declare-styleable>
+
+    <declare-styleable name="AutoBannerView">
+        <attr name="dotGravity" format="enum">
+            <enum name="left" value="1" />
+            <enum name="center" value="2" />
+            <enum name="right" value="3"/>
+        </attr>
+        <attr name="waitMilliSecond" format="integer"/>
+        <attr name="dotMargin" format="dimension" />
+    </declare-styleable>
+</resources>

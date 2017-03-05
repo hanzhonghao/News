@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">News+</string>
+    <string name="splash_info">News+ every day know everything</string>
+    <string name="github">githun热度排行</string>
+    <string name="about_me">关于我</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="load_error">网络不见了！！！</string>
+    <string name="gank_load_error">代码家的服务器不见了~~~</string>
+</resources>
