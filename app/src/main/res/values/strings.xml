@@ -8,4 +8,5 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="load_error">网络不见了！！！</string>
     <string name="gank_load_error">代码家的服务器不见了~~~</string>
+    <string name="headline">大公司头条</string>
 </resources>

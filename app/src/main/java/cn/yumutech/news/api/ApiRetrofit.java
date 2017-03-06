@@ -29,6 +29,8 @@ public class ApiRetrofit {
 
     public ZhihuApi ZhihuApiService;
     public GankApi GankApiService;
+    public DailyApi DailyApiService;
+
     public static final String ZHIHU_BASE_URL = "http://news-at.zhihu.com/api/4/";//http://news-at.zhihu.com/api/4/
     public static final String GANK_BASE_URL = "http://gank.io/api/";
     public static final String DAILY_BASE_URL = "http://app3.qdaily.com/app3/";
@@ -39,6 +41,10 @@ public class ApiRetrofit {
 
     public GankApi getGankApiService() {
         return GankApiService;
+    }
+
+    public DailyApi getDailyApiService(){
+        return DailyApiService;
     }
 
 
@@ -75,6 +81,7 @@ public class ApiRetrofit {
 
         ZhihuApiService = retrofit_zhihu.create(ZhihuApi.class);
         GankApiService = retrofit_gank.create(GankApi.class);
+        DailyApiService = retrofit_daily.create(DailyApi.class);
     }
 
     //cache

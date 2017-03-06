@@ -30,6 +30,9 @@ public class PictureActivity extends AppCompatActivity {
     public static final String IMG_URL = "img_url";
     public static final String IMG_DESC = "img_desc";
     public static final String TRANSIT_PIC = "picture";
+
+    PhotoViewAttacher mAttacher;
+
 //    @Bind(R.id.container)
 //    CoordinatorLayout mContainer;
     private String img_url;
@@ -51,7 +54,8 @@ public class PictureActivity extends AppCompatActivity {
         //设置共享元素
         ViewCompat.setTransitionName(mIvMeizhiPic, TRANSIT_PIC);
         Glide.with(this).load(img_url).centerCrop().into(mIvMeizhiPic);
-        new PhotoViewAttacher(mIvMeizhiPic);
+        mAttacher = new PhotoViewAttacher(mIvMeizhiPic);
+        mAttacher.update();
     }
 
     private void parseIntent() {
