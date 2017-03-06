@@ -19,6 +19,12 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
     </style>
 
+    <!--MainActivity-->
+    <style name="MainTheme1" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
     <!--Toolbar 样式-->
     <style name="ToolbarStyle" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
         <item name="android:textColorPrimary">@color/white</item>
@@ -27,7 +33,7 @@
     </style>
 
     <style name="StatueTransActivityTheme" parent="MainTheme">
-        </style>
+    </style>
 
     <!--Toolbar 样式-->
     <style name="MeToolbarStyle" parent="ThemeOverlay.AppCompat.Dark.ActionBar">

@@ -32,7 +32,8 @@
         </activity>
         <activity android:name=".ui.activity.GankWebActivity">
         </activity>
-        <activity android:name=".ui.activity.AboutMeActivity">
+        <activity android:name=".ui.activity.AboutMeActivity"
+                  android:theme="@style/MainTheme">
         </activity>
         <activity
             android:name=".ui.activity.ZhihuWebActivity"

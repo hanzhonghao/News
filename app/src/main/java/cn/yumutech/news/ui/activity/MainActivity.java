@@ -4,14 +4,19 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
+import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,8 +30,10 @@ import cn.yumutech.news.ui.fragment.GankFgFragment;
 import cn.yumutech.news.ui.fragment.ZhihuFragment;
 import cn.yumutech.news.ui.view.MainView;
 
-public class MainActivity extends AppCompatActivity implements MainView{
-    private List<Fragment> fragmentList ;
+public class MainActivity extends AppCompatActivity implements MainView {
+
+
+    private List<Fragment> fragmentList;
 
     @Bind(R.id.tabLayout)
     TabLayout tabLayout;
@@ -36,6 +43,15 @@ public class MainActivity extends AppCompatActivity implements MainView{
     AppBarLayout mAppBarLayout;
     @Bind(R.id.toolbar)
     Toolbar mToolbar;
+    @Bind(R.id.navigation_view)
+    NavigationView mNavigationView;
+    @Bind(R.id.drawer_layout)
+    DrawerLayout mDrawerLayout;
+    private ActionBarDrawerToggle mDrawerToggle;
+    @Bind(R.id.setting_bt)
+    Button mSettingBt;
+    @Bind(R.id.quit_bt)
+    Button mQuitBt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +72,42 @@ public class MainActivity extends AppCompatActivity implements MainView{
                 }
             }
         }
+        initDrawerLayout();
+    }
+
+    private void initDrawerLayout() {
+        mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, mToolbar, R.string.drawer_open, R.string.drawer_close);
+        mDrawerToggle.syncState();
+        mDrawerLayout.setDrawerListener(mDrawerToggle);
+
+        mNavigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(MenuItem item) {
+                switchNavigation(item.getItemId());
+                item.setChecked(true);
+                mDrawerLayout.closeDrawers();
+                return true;
+            }
+        });
+    }
+
+    private void switchNavigation(int id) {
+        switch (id) {
+            case R.id.navigation_item_news:
+                content_viewPager.setCurrentItem(0);
+                break;
+            case R.id.navigation_item_images:
+                content_viewPager.setCurrentItem(1);
+                break;
+            case R.id.navigation_item_weather:
+                content_viewPager.setCurrentItem(2);
+                break;
+            case R.id.navigation_item_about:
+                startActivity(new Intent(this, AboutMeActivity.class));
+                break;
+            default:
+                content_viewPager.setCurrentItem(0);
+        }
     }
 
 
@@ -66,7 +118,7 @@ public class MainActivity extends AppCompatActivity implements MainView{
         fragmentList.add(new GankFgFragment());
         fragmentList.add(new DailyFragment());
         content_viewPager.setOffscreenPageLimit(3);//设置至少3个fragment，防止重复创建和销毁，造成内存溢出
-        content_viewPager.setAdapter(new ViewPagerFgAdapter(getSupportFragmentManager(),fragmentList,"main_view_pager"));//给ViewPager设置适配器
+        content_viewPager.setAdapter(new ViewPagerFgAdapter(getSupportFragmentManager(), fragmentList, "main_view_pager"));//给ViewPager设置适配器
         tabLayout.setupWithViewPager(content_viewPager);//将TabLayout和ViewPager关联起来
     }
 
@@ -94,15 +146,6 @@ public class MainActivity extends AppCompatActivity implements MainView{
 
 
     /**
-     * 判断子Activity是否需要刷新功能
-     *
-     * @return false
-     */
-    private boolean isSetRefresh() {
-        return false;
-    }
-
-    /**
      * 判断当前 Activity 是否允许返回
      * 主界面不允许返回，次级界面允许返回
      *
@@ -110,5 +153,15 @@ public class MainActivity extends AppCompatActivity implements MainView{
      */
     public boolean canBack() {
         return false;
+    }
+
+    public void settingOnClick(View v){
+        Intent intent = new Intent(this, GankWebActivity.class);
+        startActivity(intent);
+    }
+
+    public void quitOnClick(View v){
+        finish();
+        System.exit(0);
     }
 }

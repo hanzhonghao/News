@@ -116,7 +116,7 @@ public class zhihuFgPresenterImpl implements zhihuPresenter {
                     }
                     if (lastVisibleItem + 1 == layoutManager
                             .getItemCount()) {
-                        adapter.updateLoadStatus(adapter.LOAD_PULL_TO);
+                           adapter.updateLoadStatus(adapter.LOAD_PULL_TO);
                         isLoadMore = true;
                         adapter.updateLoadStatus(adapter.LOAD_MORE);
                         new Handler().postDelayed(() -> getBeforeNews(time), 1000);

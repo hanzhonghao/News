@@ -9,4 +9,29 @@
     <string name="load_error">网络不见了！！！</string>
     <string name="gank_load_error">代码家的服务器不见了~~~</string>
     <string name="headline">大公司头条</string>
+    <string name="name">Mature Kid</string>
+    <string name="navigation_news">知乎</string>
+    <string name="navigation_images">干货</string>
+    <string name="navigation_weather">New+</string>
+    <string name="navigation_about">关于</string>
+    <string name="drawer_open">打开</string>
+    <string name="drawer_close">关闭</string>
+    <string name="one_word">自律和勤奋是梦想成真的的底线，付出多少就收获多少，加油！</string>
+    <string name="app_info">News+</string>
+
+    <string name="desc"> * 知乎，干货集中营，好奇心日报</string>
+    <string name="desc_api_zhihu"> * 知乎日报 Api 取自 ZhihuDailyPurify</string>
+    <string name="desc_api_gank"> * 干货日报 Api 取自 Gank.io</string>
+    <string name="desc_api_daily"> * 好奇心日报 Api 是爬取出来的，后期会整理到 GitHub</string>
+    <string name="desc_dev"> * 整体开发基于 MVP+RxJava+Retrofit</string>
+    <string name="app_dev">开发</string>
+    <string name="desc_dev_1"> * 通过 Retrofit 实现了无网缓存</string>
+    <string name="desc_dev_2"> * 基于 MVP 模式对 Activity 和 Fragment 封装了两个基类</string>
+    <string name="desc_dev_3"> * 运用RecyclerView加载了多种复杂布局</string>
+    <string name="app_me">关于我</string>
+    <string name="me_1"> * 研二的学生，还没毕业</string>
+    <string name="me_2"> * 喜欢做很多事情，不如看电影，运动，K歌</string>
+    <string name="me_3"> * 喜欢玩游戏：王者荣耀 LOL :)</string>
+    <string name="me_4"> * 最近想找实习，有兴趣的可以联系我:)</string>
+    <string name="app_content">联系我</string>
 </resources>
