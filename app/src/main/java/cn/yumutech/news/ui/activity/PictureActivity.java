@@ -6,7 +6,9 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v4.view.ViewCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -33,8 +35,8 @@ public class PictureActivity extends AppCompatActivity {
 
     PhotoViewAttacher mAttacher;
 
-//    @Bind(R.id.container)
-//    CoordinatorLayout mContainer;
+    @Bind(R.id.container)
+    CoordinatorLayout mContainer;
     private String img_url;
     private String img_desc;
 
@@ -101,7 +103,7 @@ public class PictureActivity extends AppCompatActivity {
             Uri uri = Uri.fromFile(file);
             intent.setData(uri);
             PictureActivity.this.sendBroadcast(intent);
-//            Snackbar.make(mContainer, "图片保存成功~恭喜你收获到新的妹子~~", Snackbar.LENGTH_SHORT).show();
+            Snackbar.make(mContainer, "图片保存成功~恭喜你收获到新的妹子~~", Snackbar.LENGTH_SHORT).show();
         } catch (Exception e) {
             e.printStackTrace();
         }
