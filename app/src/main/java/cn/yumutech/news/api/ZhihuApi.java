@@ -9,12 +9,7 @@ import cn.yumutech.news.beans.zhihu.SplashImage;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
 
-/**
- * Created by Werb on 2016/8/18.
- * Werb is Wanbo.
- * Contact Me : werbhelius@gmail.com
- * get Zhihu with retrofit
- */
+
 public interface ZhihuApi {
 
     @GET("start-image/1080*1920")
