@@ -1,11 +1,6 @@
 package cn.yumutech.news.api;
 
-/**
- * Created by Werb on 2016/8/18.
- * Werb is Wanbo.
- * Contact Me : werbhelius@gmail.com
- * Singleton Factory with retrofit
- */
+
 public class ApiFactory {
 
     protected static final Object monitor = new Object();
